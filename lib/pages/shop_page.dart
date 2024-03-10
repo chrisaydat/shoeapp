@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:shoeapp/components/producttile/product_tile.dart';
+import 'package:shoeapp/models/product.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({Key? key}) : super(key: key);
@@ -67,6 +69,13 @@ class _ShopPageState extends State<ShopPage> {
           ],
           ),
         ),
+        Expanded(child: ListView.builder(itemBuilder: (context, index) {
+          Product product = Product(name: 'Kivo Gari', price: "5", imagePath: 'assets/images/kivo_soaking.png', description: 'All in one gari mix');
+          return ProductTile(
+            product:product,
+          );
+        }
+        ))
        ],
       ),
     );
