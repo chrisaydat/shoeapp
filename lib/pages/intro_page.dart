@@ -53,12 +53,8 @@ class IntroPage extends StatelessWidget {
           SizedBox(
             height: 45,
           ),
-          GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-            ),
-            child: ElevatedButton(
+          
+            ElevatedButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.white),
               ),
@@ -77,7 +73,7 @@ class IntroPage extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          
         ],
       ),
     );
