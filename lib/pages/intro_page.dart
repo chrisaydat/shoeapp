@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoeapp/main.dart';
 import 'package:shoeapp/pages/home_page.dart';
+import 'package:shoeapp/pages/shop_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,25 +54,15 @@ class IntroPage extends StatelessWidget {
           SizedBox(
             height: 45,
           ),
-          
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.white),
-              ),
+            IconButton(
               onPressed: () {
                  Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()
+              MaterialPageRoute(builder: (context) => ShopPage()
               ),
             );
-              },
-              child: Text(
-                'Get started',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              }, icon: Icon(Icons.arrow_forward_ios),
+              
             ),
           
         ],
