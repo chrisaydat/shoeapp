@@ -34,15 +34,27 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 1,
-        backgroundColor: Colors.white,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         title: Text('Shop'),
         automaticallyImplyLeading: false,
-        leading: IconButton(onPressed: null, icon: Icon(Icons.list)),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+             icon: Icon(Icons.list,
+            color: Colors.black,)
+            );
+          }
+        ),
         actions: [
         IconButton(onPressed: null, icon: Icon(Icons.notifications)),
         IconButton(onPressed: null, icon: Icon(Icons.search)),
         ],),
+        drawer: Drawer(
+          backgroundColor: Colors.black,
+        ),
       bottomNavigationBar: BottomNavBar(
         onTabChange: (index) => navigateBottombar(index),
       ),
