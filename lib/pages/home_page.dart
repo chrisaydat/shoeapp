@@ -53,8 +53,41 @@ class _HomePageState extends State<HomePage> {
         IconButton(onPressed: null, icon: Icon(Icons.search)),
         ],),
         drawer: Drawer(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
+          child: Column(
+           children: [
+            DrawerHeader(
+              child: Image.asset('assets/images/aydatplacelogo.jpg'),
+              ),
+              Divider(
+                color: Colors.grey,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: Icon(Icons.home_filled),
+                  title: Text('Home'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: Icon(Icons.info),
+                  title: Text('About'),
+                ),
+              ),
+              SizedBox(height: 400,),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: Icon(Icons.logout_rounded),
+                  title: Text('Logout'),
+                ),
+              ),
+           ]
+          ),
         ),
+           
       bottomNavigationBar: BottomNavBar(
         onTabChange: (index) => navigateBottombar(index),
       ),
